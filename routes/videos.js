@@ -20,3 +20,5 @@ router.get("/:id", (req, res) => {
   console.log(`I am inside the route /:id !`);
   res.json(video);
 });
+
+module.exports = router;

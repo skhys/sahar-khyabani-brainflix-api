@@ -3,7 +3,7 @@ const fs = require("fs");
 const router = express.Router();
 
 const readVideoData = () => {
-  const videosData = fs.readFileSync(`./data/videos-details.js`);
+  const videosData = fs.readFileSync(`./data/video-details.json`);
   return JSON.parse(videosData);
 };
 

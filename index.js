@@ -9,6 +9,7 @@ const PORT = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 app.use("/videos", vidRouter);
+app.use("/images", express.static("../public/images"));
 
 app.listen(PORT, () => {
   console.log(`The server is running on ${PORT}`);

@@ -29,7 +29,16 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  const { title, description } = req.body;
+  const {
+    title,
+    description,
+    image,
+    channel,
+    likes,
+    views,
+    timestamp,
+    comments,
+  } = req.body;
   if (!title || !description) {
     return res
       .status(400)
@@ -41,26 +50,16 @@ router.post("/", (req, res) => {
     id: (videos.length + 1).toString(),
     title,
     description,
-    // channel,
-    // image,
-    // comments,
-    // likes,
-    // views,
-    // timestamp,
-    // title: newVideo.title,
-    // description: newVideo.description,
-    // channel: newVideo.channel,
-    // image: newVideo.image,
-    // views: newVideo.views,
-    // likes: newVideo.likes,
-    // duration: newVideo.duration,
-    // timestamp: newVideo.timestamp,
-    // comments: newVideo.comments,
+    channel,
+    image,
+    comments,
+    likes,
+    views,
+    timestamp,
   };
 
   videos.push(newVideo);
   writeVideoData(videos);
-
   res.status(201).json(newVideo);
 });
 
